@@ -1,0 +1,7 @@
+Please enter your choice:
+1. Create a new mind map
+2. Insert a new node
+3. Display mind map
+4. Save mind map
+5. Exit
+>
