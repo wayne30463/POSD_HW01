@@ -1,12 +1,13 @@
 #pragma once
-#include "string"
 #include "Component.h"
+#include "string"
 using namespace std;
+
 class ComponentFactory
 {
 public:
 	ComponentFactory();
 	~ComponentFactory();
-	static Component* create(Component::ComponentType, int, string);
+	Component* create(Component::ComponentType, int, string);
 };
 

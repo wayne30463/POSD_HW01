@@ -2,7 +2,7 @@
 #include "define.h"
 #include <fstream>
 #include <iostream>
-#include<sstream>
+#include <sstream>
 using namespace std;
 
 MindMapModel::MindMapModel()
@@ -37,7 +37,8 @@ void MindMapModel::createMindMap(string description)
 		delete _MindMapTree;
 	}
 	_node_id = 0;
-	_MindMapTree = new Root(_node_id, description);
+	_MindMapTree = factory.create(Component::Root, 0, description);
+	//new Root(_node_id, description);
 	_name = description;
 	_node_count = 1;
 }
@@ -45,7 +46,8 @@ void MindMapModel::createMindMap(string description)
 Component* MindMapModel::createNode(string description)
 {
 	//建立一個新的Node
-	Component* node = new Node(nullptr, _node_id + 1, description);
+	Component* node = factory.create(Component::Node, _node_id + 1, description); 
+	//new Node(nullptr, _node_id + 1, description);
 	return node;
 }
 
@@ -94,10 +96,13 @@ void MindMapModel::saveMindMap()
 		temp_list = *(draw_node->getNodeList());
 		fout << draw_node->getId() << " ";
 		fout << "\"" << draw_node->getDescription().c_str() << "\" ";
+		/*
 		for (list<Component*>::iterator it = temp_list.begin(); it != temp_list.end(); it++)
 		{
 			fout << (*it)->getId() << " ";
 		}
+		*/
+		fout << draw_node->getNodeListStr();
 		fout << endl;
 	}
 	fout.close();

@@ -11,7 +11,7 @@ ComponentFactory::~ComponentFactory()
 {
 }
 
-static Component* create(Component::ComponentType ct, int id, string description)
+Component* ComponentFactory::create(Component::ComponentType ct, int id, string description)
 {
 	if (ct == Component::Root)
 	{

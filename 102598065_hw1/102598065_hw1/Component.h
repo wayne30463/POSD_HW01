@@ -17,6 +17,7 @@ public:
 	virtual string getDescription() = 0;
 	virtual void setDescription(string) = 0;
 	virtual list<Component*>* getNodeList() = 0;
+	virtual string getNodeListStr() = 0;
 	virtual int addChild(Component*) = 0;
 	virtual void removeChild(Component*) = 0;
 	virtual void replaceChild(Component*, Component*) = 0;

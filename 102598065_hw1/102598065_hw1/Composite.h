@@ -12,7 +12,7 @@ public:
 	string getDescription();
 	void setDescription(string);
 	list<Component*>* getNodeList();
-	//string getMap(int);
+	string getNodeListStr();
 	string getMap(string);
 	int addChild(Component*);
 	void removeChild(Component*);

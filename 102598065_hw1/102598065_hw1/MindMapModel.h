@@ -1,8 +1,6 @@
 #pragma once
 #include "Component.h"
-#include "Composite.h"
-#include "Root.h"
-#include "Node.h"
+#include "ComponentFactory.h"
 
 class MindMapModel
 {
@@ -23,5 +21,6 @@ private:
 	string _name;
 	Component* _MindMapTree;
 	Component* createNode(string);
+	ComponentFactory factory;
 };
 

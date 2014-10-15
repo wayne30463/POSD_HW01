@@ -56,6 +56,17 @@ list<Component*>* Composite::getNodeList()
 	return &_nodelist;
 }
 
+string Composite::getNodeListStr()
+{
+	//¨úNodeList
+	stringstream NodeListStr;
+	for (list<Component*>::iterator it = _nodelist.begin(); it != _nodelist.end(); it++)
+	{
+		NodeListStr << (*it)->getId() << " ";
+	}
+	return NodeListStr.str();
+}
+
 Component* Composite::getParent()
 {
 	//¨úParent Node ¦ì§}
